@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gordan demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css" />
+  <style>
+    body {
+      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .p-0 { padding: 0; }
+    .m-0 { margin: 0; }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="index.js"></script>
+
+  <div class="row m-0 p-0">
+    <div class="col-sm-12 col-md-6">
+      <h3>Regression</h3>
+      <canvas id="chart" width="800" height="600"></canvas>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <h3>3x3 Gauss Jordan</h3>
+      <h5>Augmented matrix</h5>
+      <pre id="not-solved-matrix"></pre>
+      <h5>After calling:</h5>
+      <pre>gordan.solveByGaussJordan(matrix)</pre>
+      <h5>the result would is:</h5>
+      <pre id="solved-matrix"></pre>
+    </div>
+  </div>
+
+  <script type="module">
+    let ctx = document.getElementById('chart').getContext('2d');
+
+    let points = [
+      [1, 2],
+      [1.5, 4],
+      [2, 2.4],
+      [3, 5],
+      [4, 3],
+      [5.5, 9.3],
+      [5, 6],
+      [6, 10],
+      [6.5, 8.5],
+      [6.5, 13],
+      [7, 12.5]
+    ];
+
+    let rect = Gordan.getLinearRegressionRect(points);
+    let curve = Gordan.getQuadraticRegressionCurve(points);
+    let gradeSixCurve = Gordan.getRegressionPath(points, 6);
+
+    let chart = new Chart(document.getElementById('chart'), {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'The points',
+          data: Gordan.normalizePoints(points),
+          backgroundColor: '#f40'
+        }, {
+          label: 'Linear regression rect',
+          data: rect,
+          backgroundColor: '#fcc'
+        }, {
+          label: 'Quadratic regression curve',
+          data: curve,
+          backgroundColor: '#cfc'
+        }, {
+          label: 'Grade 6 regression curve',
+          data: gradeSixCurve,
+          backgroundColor: '#ccf'
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+
+    let gaussJordanMatrix = [
+      [ 1, -2,  2, -3,   15 ],
+      [ 3,  4, -1,  1,   -6 ],
+      [ 2, -3,  2, -1,   17 ],
+      [ 1,  1, -3, -2,   -7 ]
+    ];
+
+    document.getElementById('not-solved-matrix').innerHTML = gaussJordanMatrix.map(item => {
+      return item.join(',\t') + '\n';
+    }).join('\n');
+
+    let solvedMatrix = Gordan.solveByGaussJordan(gaussJordanMatrix);
+
+    document.getElementById('solved-matrix').innerHTML = solvedMatrix.map(item => {
+      return item.join(', \t') + '\n';
+    }).join('\n');
+  </script>
+</body>
+</html>
