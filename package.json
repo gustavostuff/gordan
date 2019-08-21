@@ -1,0 +1,27 @@
+{
+  "name": "gordan",
+  "version": "0.0.1",
+  "description": "Gauss-Jordan + Regression JS library",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tavuntu/gordan.git"
+  },
+  "keywords": [
+    "gauss",
+    "jordan",
+    "regression"
+  ],
+  "author": "Gustavo Lara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tavuntu/gordan/issues"
+  },
+  "homepage": "https://github.com/tavuntu/gordan#readme",
+  "dependencies": {
+    "big-js": "^3.1.3"
+  }
+}
