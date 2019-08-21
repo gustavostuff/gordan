@@ -20,7 +20,7 @@
 
 ```Gordan.getRegressionPath(points, N)```
 
-* **Returns:** a list of points for a Nth grade equation curve (```ax^N + bx^(N - 1) + cx^(N - 2) + ...```)
+* **Returns:** a list of points for an Nth grade equation curve (```ax^N + bx^(N - 1) + cx^(N - 2) + ...```)
 * ```points```: for all cases, a list of ```x, y``` points. The following formats are supported:
 
 ```json
