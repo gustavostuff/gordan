@@ -6,98 +6,124 @@
 
 ### Main API
 
-```Gordan.solveByGaussJordan(matrix)```
-
-* ```matrix```: the augmented matrix, a bidimensional array
-
-* **Returns:** the identity matrix with the solution coefficients
-
-```Gordan.getLinearRegressionRect(points)```
+<details>
+  <summary>Gordan.solveByGaussJordan(matrix)</summary>
   
-* **Returns:** a list of points for the regression rect
+  * ```matrix```: the augmented matrix, a bidimensional array
 
-```Gordan.getQuadraticRegressionCurve(points)```
+  * **Returns:** the identity matrix with the solution coefficients
+</details>
 
-* **Returns:** a list of points for the regression curve (from cuadratic equation)
+<details>
+  <summary>Gordan.getLinearRegressionRect(points)</summary>
+  
+  * **Returns:** a list of points for the regression rect
+</details>
 
-```Gordan.getRegressionPath(points, N)```
+<details>
+  <summary>Gordan.getQuadraticRegressionCurve(points)</summary>
+  
+  * **Returns:** a list of points for the regression curve (from cuadratic equation)
+</details>
 
-* **Returns:** a list of points for an Nth grade equation (```ax^N + bx^(N - 1) + cx^(N - 2) + ...```)
-* ```points```: for all cases, a list of ```x, y``` points. The following formats are supported:
+<details>
+  <summary>Gordan.getRegressionPath(points, N)</summary>
 
-```json
-[
-  [1, 2],
-  [2, 2],
-  [3, 3]
-]
-```
+  * **Returns:** a list of points for an Nth grade equation (```ax^N + bx^(N - 1) + cx^(N - 2) + ...```)
 
-```json
-[
-  { "x": 1, "y": 2 },
-  { "x": 2, "y": 2 },
-  { "x": 3, "y": 3 }
-]
-```
+  * ```points```: for all cases, a list of ```x, y``` points. The following formats are supported:
+
+  ```json
+  [
+    [1, 2],
+    [2, 2],
+    [3, 3]
+  ]
+  ```
+
+  ```json
+  [
+    { "x": 1, "y": 2 },
+    { "x": 2, "y": 2 },
+    { "x": 3, "y": 3 }
+  ]
+  ```
+</details>
+  
+
+
 
 ### Secondary API
 
-```Gordan.addRows(row1, row2, [invert1[, invert2]])```
+<details>
+  <summary>Gordan.addRows(row1, row2, [invert1[, invert2]])</summary>
+  
+  * ```row1```: first row to add, a number array
 
-* ```row1```: first row to add, a number array
+  * ```row2```: second row to add, a number array
 
-* ```row2```: second row to add, a number array
+  * ```invert1```: boolean, if present, values in ```row1``` are multiplied by ```-1```
 
-* ```invert1```: boolean, if present, values in ```row1``` are multiplied by ```-1```
+  * ```invert2```: boolean, if present, values in ```row2``` are multiplied by ```-1```
 
-* ```invert2```: boolean, if present, values in ```row2``` are multiplied by ```-1```
+  * **Returns:** the addition of the 2 rows (```number[]```)
+</details>
 
-* **Returns:** the addition of the 2 rows (```number[]```)
+<details>
+  <summary>Gordan.multiplyRow(row, value)</summary>
+  
+  * ```row```: the row to multiply, a number array
 
-```Gordan.multiplyRow(row, value)```
+  * ```value```: each number in ```row``` is multiplied by this number
 
-* ```row```: the row to multiply, a number array
+  * **Returns:** a new row with the multipled values (```number[]```)
+</details>
 
-* ```value```: each number in ```row``` is multiplied by this number
+<details>
+  <summary>Gordan.divideRow(row, value)</summary>
+  
+  * ```row```: the row to divide, a number array
 
-* **Returns:** a new row with the multipled values (```number[]```)
+  * ```value```: each number in ```row``` is divided by this number
 
-```Gordan.divideRow(row, value)```
+  * **Returns:** a new row with the divided values (```number[]```)
+</details>
 
-* ```row```: the row to divide, a number array
+<details>
+  <summary>Gordan.getSymbolValues(matrix)</summary>
+  
+  * ```matrix```: the augmented matrix, a bidimensional array
 
-* ```value```: each number in ```row``` is divided by this number
+  * **Returns:** the last column of the resulting identity matrix (```number[]```)
+</details>
 
-* **Returns:** a new row with the divided values (```number[]```)
+<details>
+  <summary>Gordan.normalizePoints(points)</summary>
+  
+  * ```points```: an array of ```[x, y]``` or ```{x, y}``` points
 
-```Gordan.getSymbolValues(matrix)```
+  * **Returns:** an array of points with ```{x, y}``` format
+</details>
 
-* ```matrix```: the augmented matrix, a bidimensional array
+<details>
+  <summary>Gordan.getRegressionMatrixFromPoints(poi, degreeOfEquation)```</summary>
+  
+  * ```points```: an array of ```[x, y]``` or ```{x, y}``` points
 
-* **Returns:** the last column of the resulting identity matrix (```number[]```)
+  * ```degreeOfEquation```: a number greater than zero
 
-```Gordan.normalizePoints(points)```
+  * **Returns:** the regression augmented matrix
+</details>
 
-* ```points```: an array of ```[x, y]``` or ```{x, y}``` points
+<details>
+  <summary>Gordan.getRange(points, axis)</summary>
+  
+  * ```points```: an array of ```[x, y]``` or ```{x, y}``` points
 
-* **Returns:** an array of points with ```{x, y}``` format
+  * ```axis```: a string ```'x'``` or ```'y'```
 
-```Gordan.getRegressionMatrixFromPoints(points, degreeOfEquation)```
-
-* ```points```: an array of ```[x, y]``` or ```{x, y}``` points
-
-* ```degreeOfEquation```: a number greater than zero
-
-* **Returns:** the regression augmented matrix
-
-```Gordan.getRange(points, axis)```
-
-* ```points```: an array of ```[x, y]``` or ```{x, y}``` points
-
-* ```axis```: a string ```'x'``` or ```'y'```
-
-* **Returns:** ```'x'```/```'y'``` limits on the plane for the given points
+  * **Returns:** ```'x'```/```'y'``` limits on the plane for the given points
+</details>
 
 ### Gauss-Jordan example
 
