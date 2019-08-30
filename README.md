@@ -2,7 +2,21 @@
 
 ## Gauss-Jordan + Regression JavaScript library
 
-[![Version](http://img.shields.io/:npm-0.1.3-green.svg)](https://www.npmjs.com/package/gordan/v/0.1.3)
+[![Version](http://img.shields.io/:npm-0.1.4-green.svg)](https://www.npmjs.com/package/gordan/v/0.1.4)
+
+### Installation
+
+```npm i gordan --save```
+
+### Usage
+
+```js
+import Gordan from 'gordan'; // for ES6
+```
+
+```js
+const Gordan = require('gordan');  // for Node
+```
 
 ### Main API
 
@@ -50,9 +64,6 @@
   ```
 </details>
   
-
-
-
 ### Secondary API
 
 <details>
