@@ -2,7 +2,7 @@
 
 ## Gauss-Jordan + Regression JavaScript library
 
-[![Version](http://img.shields.io/:npm-0.1.4-green.svg)](https://www.npmjs.com/package/gordan/v/0.1.4)
+[![Version](http://img.shields.io/:npm-0.1.5-green.svg)](https://www.npmjs.com/package/gordan/v/0.1.5)
 
 ### Installation
 
@@ -117,7 +117,7 @@ const Gordan = require('gordan');  // for Node
 </details>
 
 <details>
-  <summary>Gordan.getRegressionMatrixFromPoints(poi, degreeOfEquation)```</summary>
+  <summary>Gordan.getRegressionMatrixFromPoints(points, degreeOfEquation)```</summary>
   
   * ```points```: an array of ```[x, y]``` or ```{x, y}``` points
 
@@ -217,5 +217,3 @@ let chart = new Chart(document.getElementById('chart'), {
 });
 
 ```
-
-**This is a work in progress!**

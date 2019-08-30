@@ -2,7 +2,7 @@
 */
 
 /**
- * Returns an Object containinf Gordan API, some functions are "private"
+ * Returns an Object containing Gordan API, some functions are "private"
  */
 const Gordan = (() => {
   /**
