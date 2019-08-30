@@ -1,6 +1,6 @@
 {
   "name": "gordan",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Gauss-Jordan + Regression JS library",
   "main": "index.js",
   "scripts": {
