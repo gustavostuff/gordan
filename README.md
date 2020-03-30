@@ -3,7 +3,7 @@
 ## Gauss-Jordan + Regression JavaScript library
 
 [![License](http://img.shields.io/:license-MIT-blue.svg)](https://github.com/tavuntu/gordan/blob/master/LICENSE.md)
-[![Version](http://img.shields.io/:npm-0.1.6-green.svg)](https://www.npmjs.com/package/gordan/v/0.1.6)
+[![Version](http://img.shields.io/:npm-0.1.7-green.svg)](https://www.npmjs.com/package/gordan/v/0.1.7)
 
 ### Installation
 
